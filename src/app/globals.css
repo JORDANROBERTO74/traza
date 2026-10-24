@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-arena: #f4f1ec;
+  --color-paper: #fbf9f5;
+  --color-graphite: #14171a;
+  --color-stone: #8a8d8f;
+  --color-line: #e2ddd3;
+  --color-terracotta: #c4552d;
+  --color-terracotta-deep: #a34522;
+  --color-sand: #e7dfd2;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-arena text-graphite antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-terracotta);
+    color: var(--color-arena);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
