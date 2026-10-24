@@ -1,4 +1,4 @@
-const FALLBACK_URL = "https://traza.vercel.app";
+const FALLBACK_URL = "https://traza-woad.vercel.app";
 
 function resolveSiteUrl(): string {
   const value = process.env.NEXT_PUBLIC_SITE_URL?.trim();
